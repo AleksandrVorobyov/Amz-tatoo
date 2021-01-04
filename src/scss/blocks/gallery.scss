@@ -1,0 +1,255 @@
+.gallery {
+  padding: 50px 0;
+  background: #0e0b12;
+}
+
+.gallery-wrap {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.gallery__title {
+  margin-bottom: 20px;
+  font-size: 48px;
+  font-family: $font9;
+  font-weight: 900;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.gallery__subtitle {
+  margin-bottom: 40px;
+  max-width: 430px;
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  line-height: 1.3;
+}
+
+.gallery__cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 830px;
+  margin: 0 auto;
+
+  @media (min-width: 830px) {
+    max-width: 770px;
+    flex-direction: row;
+  }
+
+  @media (min-width: 1230px) {
+    max-width: 1230px;
+  }
+}
+
+.gallery__cards-item {
+  position: relative;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  background-color: rgb(14, 11, 18);
+  width: 100%;
+  height: 350px;
+  max-height: 350px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: $trallline;
+  box-shadow: 0px 0px 0px $red;
+
+  &::before {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    content: "";
+    width: 0px;
+    height: 2px;
+    background-color: $red;
+    transition: width 0.3s linear;
+    z-index: 20;
+  }
+
+  &::after {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    content: "";
+    width: 0px;
+    height: 2px;
+    background-color: $red;
+    transition: width 0.3s linear;
+    z-index: 20;
+  }
+
+  &:last-child {
+    margin-bottom: 50px;
+  }
+
+  .gallery__cards-item-wrap {
+    &::before {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      content: "";
+      width: 2px;
+      height: 0px;
+      background-color: $red;
+      transition: height 0.3s linear 0.3s;
+      z-index: 20;
+    }
+
+    &::after {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      content: "";
+      width: 2px;
+      height: 0px;
+      background-color: $red;
+      transition: height 0.3s linear 0.3s;
+      z-index: 20;
+    }
+  }
+
+  @media (min-width: 480px) {
+    width: 370px;
+    height: 400px;
+    max-width: 370px;
+    max-height: 400px;
+  }
+}
+
+.gallery__cards-item--active {
+  position: fixed;
+  content: "";
+  top: 15%;
+  left: 15%;
+  transform: translate(0, 0);
+  width: 70%;
+  height: 70%;
+  max-width: 800px;
+  max-height: 800px;
+  z-index: 2000;
+  border-radius: 10px;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  cursor: pointer;
+  border: 2px solid $red;
+
+  @media (min-width: 830px) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.gallery__cards-item img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.05);
+}
+
+.gallery__cards-item-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery__cards-item-plus {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  font-size: 34px;
+  color: $white;
+  opacity: 0;
+  transition: opacity 0.3s linear 0.3s, transform 0.3s linear 0.3s;
+}
+
+.gallery__cards-item:hover {
+  box-shadow: 0px 0px 10px $red;
+
+  &::before {
+    width: calc(100% - 20px);
+  }
+
+  &::after {
+    width: calc(100% - 20px);
+  }
+  .gallery__cards-item-wrap::before {
+    height: calc(100% - 20px);
+  }
+
+  .gallery__cards-item-wrap::after {
+    height: calc(100% - 20px);
+  }
+
+  .gallery__cards-item-plus {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.gallery__btn {
+  position: relative;
+  height: 60px;
+  padding: 0 65px;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 900;
+  font-family: "MuseoSansCyrl_9";
+  color: rgb(255, 255, 255);
+  background-color: rgb(255, 0, 0);
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.6s linear;
+  z-index: 2;
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translate(0, -50%);
+    content: "";
+    width: 45px;
+    height: 45px;
+    background-color: $white;
+    transition: all 0.8s linear;
+    z-index: -1;
+    border-radius: 50%;
+  }
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    right: 22px;
+    transform: translate(0, -50%);
+    content: url(../img/tatoo/svg/next.png);
+    width: 20px;
+    height: 20px;
+    transition: all 0.8s linear;
+    z-index: -1;
+  }
+}
+
+.gallery__btn:hover {
+  color: $black;
+}
+
+.gallery__btn:hover::before {
+  width: 400px;
+  height: 400px;
+  right: 0px;
+}
+
+.gallery__btn:hover::after {
+  animation: btn-next 1s ease-in-out .5s infinite alternate;
+}

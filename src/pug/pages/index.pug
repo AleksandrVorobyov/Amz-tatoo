@@ -1,0 +1,21 @@
+extends ../layouts/page-layout.pug
+include ./../mixins/*.pug
+
+block variables
+	- var title = 'AMZ Tatoo';
+	- var pageClass= "ui";
+	- var pageFileName= "index.html";
+
+
+block content
+	header
+		include ../sections/navigation.pug
+		include ../sections/header.pug
+	main
+		include ../sections/choose-us.pug
+		include ../sections/gallery.pug
+		include ../sections/how-we-work.pug
+		include ../sections/form.pug
+		include ../sections/team.pug
+	footer.footer
+		include ../sections/footer.pug

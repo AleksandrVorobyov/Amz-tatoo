@@ -1,0 +1,49 @@
+block variables
+
+<!DOCTYPE html>
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title #{title}
+
+        meta(name="keywords" content= keywords)
+        meta(name="description" content= description)
+        link(rel="shortcut icon", href="./img/favicons/favicon.ico", type="image/x-icon")
+        <!-- build:css2 css/styles.css -->
+        link(rel="stylesheet", href="./css/main.css")
+        link(rel="stylesheet", href="./libs/css/animate.css")
+        <!-- endbuild -->
+        link(rel="stylesheet" href="./libs/font-awesome/css/font-awesome.min.css")
+        link(rel="stylesheet", href="./libs/css/owl.carousel.min.css")
+        link(rel="stylesheet", href="./libs/css/owl.theme.default.min.css")
+   
+    body(class=pageClass)
+        
+        .page
+            block content
+
+        <!-- build:js1 js/jquery.js -->
+        <script src="./libs/jquery/jquery-3.3.1.min.js"></script>
+        <!-- endbuild -->
+
+        <!-- build:js3 js/main.js -->
+        <script src="./js/main.js"></script>
+        <!-- endbuild -->
+
+        <script src="./js/nav.js"></script>
+
+        <script src="./js/popup.js"></script>
+
+        <script src="./js/btn-hover.js"></script>
+
+        <script src="./js/burger.js"></script>
+
+        <script src="./js/header-carousel.js"></script>
+
+        script(src="./libs/owlcarousel/owl.carousel.min.js")
+
+        <script>jQuery(document).ready(function($) {new WOW().init();});</script>
+        <script src="./libs/wow/wow.min.js"></script>
+        <script>jQuery(document).ready(function($) {$('.wow').attr('data-wow-duration', '1.5s' );});</script>

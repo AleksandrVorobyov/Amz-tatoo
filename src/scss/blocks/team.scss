@@ -1,0 +1,107 @@
+.team {
+  padding: 50px 0;
+  background: $white;
+}
+
+.team__wrap {
+}
+
+.team__title {
+  margin-bottom: 45px;
+  font-size: 48px;
+  font-family: "MuseoSansCyrl_9";
+  font-weight: 900;
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+.team__subtitle {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 45px;
+  max-width: 600px;
+  font-size: 18px;
+  color: rgb(0, 0, 0);
+  line-height: 1.2;
+  text-align: center;
+}
+
+.team__cards {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  @media (min-width: 1230px) {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+
+.team__cards-item {
+  margin-bottom: 30px;
+  border: 2px solid $red;
+  border-radius: 10px;
+  width: 100%;
+  overflow: hidden;
+
+  @media (min-width: 480px) {
+    max-width: 370px;
+  }
+
+  @media (min-width: 1230px) {
+    margin-bottom: 0;
+    border: 0px solid $red;
+    border-radius: 0px;
+  }
+}
+
+.team__cards-img {
+  margin-bottom: 45px;
+  width: 370px;
+  height: 400px;
+  max-height: 400px;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+  background-color: $black;
+
+  img {
+    width: 100%;
+    height: 100%;
+    transform: scale(1.15);
+  }
+
+  @media (min-width: 1230px) {
+    border-radius: 10px;
+  }
+}
+
+.team__cards-title {
+  margin-bottom: 45px;
+  font-size: 24px;
+  font-family: "MuseoSansCyrl_9";
+  font-weight: 900;
+  color: rgb(0, 0, 0);
+  text-align: center;
+
+  @media (min-width: 1230px) {
+    text-align: left;
+  }
+}
+
+.team__cards-subtitle {
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 270px;
+  font-size: 18px;
+  color: rgb(0, 0, 0);
+  line-height: 1.2;
+  text-align: center;
+
+  @media (min-width: 1230px) {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-align: left;
+  }
+}

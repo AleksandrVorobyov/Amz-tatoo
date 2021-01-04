@@ -1,0 +1,14 @@
+mixin card-choose-us(number, desc, link, img)
+    .card-choose__card
+        span.card-choose__card-number #{number}
+        p.card-choose__card-desc #{desc}
+        a(href= link).card-choose__card-link <span>Подробнее</span>
+        .card-choose__card-img
+            img(src="./img/choose-us/" + img, alt="01.jpg")
+
+mixin card-gallery(img, alt)
+    .gallery__cards-item
+        img(src="./img/tatoo/" + img, alt= alt)
+        .gallery__cards-item-wrap
+            .gallery__cards-item-plus 
+                <i class="fa fa-search-plus" aria-hidden="true"></i>

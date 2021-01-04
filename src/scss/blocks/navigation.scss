@@ -1,0 +1,267 @@
+.navigation {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 60px;
+  width: 100%;
+  transition: $trallline;
+  z-index: 1000;
+}
+
+.navigation--active {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 1);
+  animation: nav 1s linear 0s;
+  box-shadow: 0px 1px 5px $red;
+}
+
+.navigation-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.navigation-col {
+  display: flex;
+  align-items: center;
+}
+
+.navigation-col:nth-child(1) {
+  width: 100%;
+  justify-content: space-between;
+  @media (min-width: 400px) {
+    width: auto;
+  }
+}
+
+.navigation__logo {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  margin-right: 50px;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: -25px;
+    content: "";
+    width: 2px;
+    height: 100%;
+    background-color: $white;
+    cursor: default;
+  }
+}
+
+.navigation__logo-title {
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: 900;
+  font-family: $font9;
+  color: $white;
+}
+
+.navigation__links {
+  display: none;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+
+  @media (min-width: 990px) {
+    display: flex;
+  }
+}
+
+.navigation__links-burger {
+  position: relative;
+  display: flex;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+
+  @media (min-width: 990px) {
+    display: none;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: $red;
+  }
+
+  &::after {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: $red;
+  }
+
+  span::before {
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: $red;
+    transform: translate(0, -50%);
+  }
+}
+
+.navigation__links-item {
+}
+
+.navigation__links-item + .navigation__links-item {
+  margin-left: 18px;
+}
+
+.navigation__links-item-href {
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 900;
+  font-family: $font9;
+  color: $white;
+  text-decoration: none;
+
+  &::before {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    content: "";
+    width: 0px;
+    height: 2px;
+    background-color: $red;
+    transition: $trallline;
+  }
+
+  &::after {
+    position: absolute;
+    bottom: -8px;
+    right: 50%;
+    content: "";
+    width: 0px;
+    height: 2px;
+    background-color: $red;
+    transition: $trallline;
+  }
+}
+
+.navigation__links-item-href:hover::before,
+.navigation__links-item-href:hover::after {
+  width: 50%;
+}
+
+.navigation__social {
+  display: none;
+  align-items: center;
+
+  @media (min-width: 400px) {
+    display: flex;
+  }
+}
+
+.navigation__social-item {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+  span {
+    display: none;
+  }
+
+  @media (min-width: 1150px) {
+    span {
+      display: inline-block;
+    }
+  }
+}
+
+.navigation__social-item + .navigation__social-item {
+  margin-left: 20px;
+}
+
+.navigation__social-link {
+  position: relative;
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 12px;
+  font-weight: 300;
+  font-family: $font3;
+  color: $white;
+
+  &::before {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    content: "";
+    width: 0px;
+    height: 2px;
+    background-color: $red;
+    transition: $trallline;
+  }
+
+  &::after {
+    position: absolute;
+    bottom: -8px;
+    right: 50%;
+    content: "";
+    width: 0px;
+    height: 2px;
+    background-color: $red;
+    transition: $trallline;
+  }
+}
+
+.navigation__social-link:hover::before,
+.navigation__social-link:hover::after {
+  width: 50%;
+}
+
+.navigation__sign-up {
+  margin-left: 30px;
+}
+
+.navigation__sign-up-btn {
+  position: relative;
+  display: none;
+  padding: 13px 25px;
+  font-size: 12px;
+  font-weight: 300;
+  font-family: $font3;
+  color: $white;
+  background-color: $red;
+  cursor: pointer;
+  border: none;
+  border-radius: 30px;
+  outline: none;
+  transition: $trallline;
+  overflow: hidden;
+
+  &:hover {
+    color: #000;
+    box-shadow: 0px 8px 5px #ff0000c0;
+  }
+
+  @media (min-width: 570px) {
+    display: inline-block;
+  }
+}
+
+.navigation__sign-up-btn span {
+  position: absolute;
+  background-color: $white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: btn 1s linear infinite;
+}
